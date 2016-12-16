@@ -8,4 +8,4 @@ csi1=abs(squeeze(csi1)).';
 csi_temp=[csi1(:,1);csi1(:,2)];
 csi_final=[csi_final,csi_temp];
 end
-csi_final
+imagesc(csi_final)
