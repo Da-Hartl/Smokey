@@ -1,1 +1,0 @@
-csi_trace = read_bf_file('Messdaten_Smokey/longer_csi.dat');
