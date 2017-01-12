@@ -10,7 +10,7 @@ shortenData=6;
 useSpatialPaths=[2 2];
 
 global deviation;
-deviation=1.5;
+deviation=1.0;
 global learningrate
 learningrate=0.2;    
 
@@ -50,13 +50,12 @@ csiForeground2=extract_Foreground2(csiValues,calibration,csiTimestamps);
 display_csi(csiForeground,csiTimestamps,'Foreground ohne Adaption');
 display_csi(csiForeground2,csiTimestamps,'Foreground mit Adaption');
 
-filtered=filter_Foreground(csiForeground2,csiTimestamps,3);
-filtered2=filter_Foreground(filtered,csiTimestamps,1);
-display_csi(filtered2,csiTimestamps,'Foreground gefiltert');
+filtered=filter_Foreground(csiForeground2,csiTimestamps,2);
+display_csi(filtered,csiTimestamps,'Foreground gefiltert');
 
 
 
-csiSum=sum(filtered2);
+csiSum=sum(csiForeground2);
 figure;
 plot(csiTimestamps,csiSum);
 title('Summe der gefilterten Werte');
